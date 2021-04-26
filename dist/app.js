@@ -14,27 +14,27 @@ var rimuoviAdesivi = document.getElementById('rim-adesivi');
 var patches = [{
   name: "Anguria",
   side: 'right',
-  img: "./img/patch/AACCS202387881.png"
+  img: "../img/patch/AACCS202387881.png"
 }, {
   name: "Fragola",
   side: 'right',
-  img: "./img/patch/AACCS00204380311.png"
+  img: "../img/patch/AACCS00204380311.png"
 }, {
   name: "Cuore",
   side: 'right',
-  img: "./img/patch/ADECO02796B80303.png"
+  img: "../img/patch/ADECO02796B80303.png"
 }, {
   name: "Anguria",
   side: 'left',
-  img: "./img/patch/AACCS202387881-1.png"
+  img: "../img/patch/AACCS202387881-1.png"
 }, {
   name: "Fragola",
   side: 'left',
-  img: "./img/patch/AACCS00204380311-1.png"
+  img: "../img/patch/AACCS00204380311-1.png"
 }, {
   name: "Cuore",
   side: 'left',
-  img: "./img/patch/ADECO02796B80303-1.png"
+  img: "../img/patch/ADECO02796B80303-1.png"
 }]; // inserisco dinamicamente i tasti per applicare gli adesivi
 
 patches.forEach(function (p) {
