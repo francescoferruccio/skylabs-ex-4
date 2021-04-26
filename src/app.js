@@ -2,6 +2,7 @@ const misure = document.querySelector('.misure-list');
 const btnCarrello = document.querySelector('.btn-carrello');
 const closeModal = document.querySelector('#close-modal');
 const rimuoviAdesivi = document.getElementById('rim-adesivi');
+// array degli adesivi applicabili
 const patches = [
     {
         name: "Anguria",
@@ -42,12 +43,16 @@ patches.forEach(p => {
     item.classList = `patch ${p.side}`;
 
     document.querySelector(`.adesivi-list.${p.side}`).append(item);
+
     item.addEventListener('click', (e) => {
+        // rimuovo la classe active da tutti gli adesivi
         document.querySelectorAll(`.patch.${p.side}`).forEach(item => {
             item.classList.remove('active');
         });
+        // mostro l'adesivo relativo all'elemento cliccato
         let img = document.querySelector(`.overlay-patch[data-side=${p.side}`);
         img.innerHTML = `<img src=${p.img} class=${p.side}></img>`;
+        // assegno la classe active all'elemento cliccato
         e.target.classList.add('active');
     })
 });
@@ -60,8 +65,9 @@ rimuoviAdesivi.addEventListener('click', () => {
         l.classList.remove('active');
     });
 
+    // rimuovo l'img dell'adesivo
     let imgAdesivi = document.querySelectorAll('.overlay-patch');
-    console.log(imgAdesivi);
+    // console.log(imgAdesivi);
     imgAdesivi.forEach(i => {
         i.innerHTML = '';
     })
@@ -69,10 +75,10 @@ rimuoviAdesivi.addEventListener('click', () => {
 
 // gestisco il click su una misura
 misure.addEventListener('click', function(e) {
+    // controllo se ho cliccato su un elemento valido della lista
     if(e.target.className === 'misure-item') {
         // nascondo il msg di errore se era visibile
         document.querySelector('.err-misura').style.visibility = 'hidden';
-        // controllo se ho cliccato su un elemento valido della lista
         // rimuovo la classe active da tutti gli elementi
         // e la assegno solo a quello cliccato
         document.querySelectorAll('.misure-item').forEach(item => {
@@ -80,7 +86,7 @@ misure.addEventListener('click', function(e) {
         });
 
         e.target.classList.add('active');
-        console.log(e.target.textContent);
+        // console.log(e.target.textContent);
     }
 });
 
@@ -97,6 +103,7 @@ btnCarrello.addEventListener('click', () => {
 
     // controllo se è stata scelta una misura
     if(!size) {
+        // se non ho selezionato una misura mostro il msg di errore
         err.style.visibility = 'visible';
     } else {
         let modal = document.getElementById('modal');
@@ -116,11 +123,13 @@ btnCarrello.addEventListener('click', () => {
 
         riepilogo.innerHTML = info;
 
+        // nascondo il msg di errore
         err.style.display = 'hidden';
     }
 
 });
 
+// nascondo la modale
 closeModal.addEventListener('click', () => {
     document.querySelector('#modal').style.display = 'none';
 })

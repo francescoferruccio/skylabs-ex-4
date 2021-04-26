@@ -10,7 +10,8 @@
 var misure = document.querySelector('.misure-list');
 var btnCarrello = document.querySelector('.btn-carrello');
 var closeModal = document.querySelector('#close-modal');
-var rimuoviAdesivi = document.getElementById('rim-adesivi');
+var rimuoviAdesivi = document.getElementById('rim-adesivi'); // array degli adesivi applicabili
+
 var patches = [{
   name: "Anguria",
   side: 'right',
@@ -43,11 +44,14 @@ patches.forEach(function (p) {
   item.classList = "patch ".concat(p.side);
   document.querySelector(".adesivi-list.".concat(p.side)).append(item);
   item.addEventListener('click', function (e) {
+    // rimuovo la classe active da tutti gli adesivi
     document.querySelectorAll(".patch.".concat(p.side)).forEach(function (item) {
       item.classList.remove('active');
-    });
+    }); // mostro l'adesivo relativo all'elemento cliccato
+
     var img = document.querySelector(".overlay-patch[data-side=".concat(p.side));
-    img.innerHTML = "<img src=".concat(p.img, " class=").concat(p.side, "></img>");
+    img.innerHTML = "<img src=".concat(p.img, " class=").concat(p.side, "></img>"); // assegno la classe active all'elemento cliccato
+
     e.target.classList.add('active');
   });
 }); // tasto per resettare gli adesivi
@@ -57,26 +61,26 @@ rimuoviAdesivi.addEventListener('click', function () {
   var listaAdesivi = document.querySelectorAll('.patch');
   listaAdesivi.forEach(function (l) {
     l.classList.remove('active');
-  });
-  var imgAdesivi = document.querySelectorAll('.overlay-patch');
-  console.log(imgAdesivi);
+  }); // rimuovo l'img dell'adesivo
+
+  var imgAdesivi = document.querySelectorAll('.overlay-patch'); // console.log(imgAdesivi);
+
   imgAdesivi.forEach(function (i) {
     i.innerHTML = '';
   });
 }); // gestisco il click su una misura
 
 misure.addEventListener('click', function (e) {
+  // controllo se ho cliccato su un elemento valido della lista
   if (e.target.className === 'misure-item') {
     // nascondo il msg di errore se era visibile
-    document.querySelector('.err-misura').style.visibility = 'hidden'; // controllo se ho cliccato su un elemento valido della lista
-    // rimuovo la classe active da tutti gli elementi
+    document.querySelector('.err-misura').style.visibility = 'hidden'; // rimuovo la classe active da tutti gli elementi
     // e la assegno solo a quello cliccato
 
     document.querySelectorAll('.misure-item').forEach(function (item) {
       item.classList.remove('active');
     });
-    e.target.classList.add('active');
-    console.log(e.target.textContent);
+    e.target.classList.add('active'); // console.log(e.target.textContent);
   }
 });
 btnCarrello.addEventListener('click', function () {
@@ -91,16 +95,19 @@ btnCarrello.addEventListener('click', function () {
   patchDx = patchDx ? patchDx.textContent : 'Nessuno'; // controllo se è stata scelta una misura
 
   if (!size) {
+    // se non ho selezionato una misura mostro il msg di errore
     err.style.visibility = 'visible';
   } else {
     var modal = document.getElementById('modal');
     var riepilogo = document.getElementById('info');
     modal.style.display = 'flex';
     var info = "\n            <div>\n                <h1>Riepilogo ordine</h1>\n                <h2>Modello: ".concat(name, "</h2>\n                <h2>Prezzo: ").concat(price, "</h2>\n                <h2>Misura: ").concat(size, "</h2>\n                <h2>Adesivo SX: ").concat(patchSx, "</h2>\n                <h2>Adesivo DX: ").concat(patchDx, "</h2>\n            </div>\n        ");
-    riepilogo.innerHTML = info;
+    riepilogo.innerHTML = info; // nascondo il msg di errore
+
     err.style.display = 'hidden';
   }
-});
+}); // nascondo la modale
+
 closeModal.addEventListener('click', function () {
   document.querySelector('#modal').style.display = 'none';
 });
