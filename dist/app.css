@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1440px;
+  margin: auto;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+li a {
+  text-decoration: none;
+  color: #000;
+}
+li a:hover {
+  color: lightskyblue;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  padding-bottom: 10px;
+}
+header .logo {
+  height: 50%;
+  display: flex;
+  margin-bottom: 15px;
+}
+header .logo img {
+  height: 100%;
+  width: auto;
+  margin: 0 10px 0 0;
+}
+header .nav ul {
+  display: flex;
+}
+header .nav ul li {
+  margin: 0 10px;
+}
+
+main {
+  height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  border-top: 1px solid lightskyblue;
+  border-bottom: 1px solid lightskyblue;
+}
+main .media {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  overflow-y: auto;
+}
+main .media .gallery {
+  height: 100%;
+}
+main .media .gallery .shoe-card {
+  position: relative;
+}
+main .media .gallery .shoe-card img {
+  width: 100%;
+  margin: 30px 0;
+}
+main .media .gallery .shoe-card .overlay-patch img {
+  position: absolute;
+  top: 105px;
+  height: 100px;
+  width: auto;
+}
+main .media .gallery .shoe-card .overlay-patch .right {
+  left: 260px;
+}
+main .media .gallery .shoe-card .overlay-patch .left {
+  right: 260px;
+}
+main .details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+  min-height: 700px;
+  padding: 50px 0;
+}
+main .details .misure {
+  display: flex;
+  width: 300px;
+}
+main .details .misure .misure-title {
+  width: 40%;
+}
+main .details .misure .misure-list {
+  width: 60%;
+}
+main .details .misure .misure-list ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+main .details .misure .misure-list ul li {
+  margin: 2px 5px;
+  cursor: pointer;
+  border: 1px solid lightskyblue;
+  padding: 2px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  text-align: center;
+}
+main .details .misure .misure-list ul li:hover {
+  background-color: lightskyblue;
+  color: #fff;
+}
+main .details .misure .misure-list ul .active {
+  background-color: lightskyblue;
+  color: #fff;
+}
+main .details .adesivi {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+main .details .adesivi .adesivi-container {
+  display: flex;
+  align-items: center;
+}
+main .details .adesivi .adesivi-container .adesivi-title {
+  width: 40%;
+}
+main .details .adesivi .adesivi-container .adesivi-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+}
+main .details .adesivi .adesivi-container .adesivi-list .patch {
+  cursor: pointer;
+  border: 1px solid lightskyblue;
+  margin: 2px;
+  padding: 2px;
+}
+main .details .adesivi .adesivi-container .adesivi-list .patch:hover {
+  background-color: lightskyblue;
+  color: #fff;
+}
+main .details .adesivi .adesivi-container .adesivi-list .active {
+  background-color: lightskyblue;
+  color: #fff;
+}
+main .details #rim-adesivi {
+  border: 1px solid lightskyblue;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+main .details #rim-adesivi:hover {
+  color: lightskyblue;
+}
+main .details .err-misura {
+  visibility: hidden;
+  color: red;
+}
+main .details .btn-carrello {
+  background-color: lightskyblue;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+}
+main .details .btn-carrello:hover {
+  transform: scale(1.05);
+  transition: all 0.1s linear;
+  border: 1px solid lightskyblue;
+  background-color: #fff;
+  color: lightskyblue;
+}
+main #modal {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+main #modal #riepilogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  width: 30%;
+  height: 40%;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.9);
+  position: relative;
+}
+main #modal #riepilogo span {
+  position: absolute;
+  font-size: 28px;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+main #modal #riepilogo span:hover {
+  transform: scale(1.2);
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+  height: 200px;
+}
+footer ul h2 {
+  margin-bottom: 20px;
+}
+footer ul li {
+  margin: 5px 0;
+}
+
+@media screen and (max-width: 1440px) {
+  main .media .gallery {
+    margin: auto;
+  }
+  main .media .gallery .shoe-card {
+    position: relative;
+  }
+  main .media .gallery .shoe-card img {
+    width: 400px;
+    height: auto;
+    margin: 30px 0;
+  }
+  main .media .gallery .shoe-card .overlay-patch img {
+    position: absolute;
+    top: 60px;
+    height: 50px;
+    width: auto;
+  }
+  main .media .gallery .shoe-card .overlay-patch .right {
+    left: 155px;
+  }
+  main .media .gallery .shoe-card .overlay-patch .left {
+    right: 155px;
+  }
+}
+@media screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+    height: 100%;
+  }
+  main .media {
+    overflow-y: visible;
+    width: 100%;
+  }
+  main .media .gallery {
+    margin: auto;
+  }
+  main .media .gallery .shoe-card {
+    position: relative;
+  }
+  main .media .gallery .shoe-card img {
+    width: 375;
+    height: auto;
+    margin: 30px 0;
+  }
+  main .media .gallery .shoe-card .overlay-patch img {
+    position: absolute;
+    top: 60px;
+    height: 50px;
+    width: auto;
+  }
+  main .media .gallery .shoe-card .overlay-patch .right {
+    left: 155px;
+  }
+  main .media .gallery .shoe-card .overlay-patch .left {
+    right: 155px;
+  }
+  main .details {
+    height: 500px;
+  }
+  main .details .btn-carrello {
+    padding: 10px;
+  }
+
+  footer {
+    flex-wrap: wrap;
+  }
+  footer ul {
+    width: 50%;
+  }
+}

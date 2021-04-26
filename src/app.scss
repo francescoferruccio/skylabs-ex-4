@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1440px;
+    margin: auto;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+li{
+    list-style: none;
+    
+    a {
+        text-decoration: none;
+        color: #000;
+    
+        &:hover {
+            color: lightskyblue;
+        }
+    }
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    padding-bottom: 10px;
+
+    .logo {
+        height: 50%;
+        display: flex;
+        margin-bottom: 15px;
+
+        img {
+            height: 100%;
+            width: auto;
+            margin: 0 10px 0 0;
+        }
+    }
+
+    .nav {
+        ul {
+            display: flex;
+            li {
+                margin: 0 10px;
+            }
+        }
+    }
+}
+
+main {
+    height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    border-top: 1px solid lightskyblue;
+    border-bottom: 1px solid lightskyblue;
+
+    .media {
+        display: flex;
+        align-items: center;
+        width: 50%;
+        height: 100%;
+        overflow-y: auto;
+
+        .gallery {
+            height: 100%;
+            .shoe-card {
+                position: relative;
+                img {
+                    width: 100%;
+                    margin: 30px 0;
+                }
+                .overlay-patch {
+                    img {
+                        position: absolute;
+                        top: 105px;
+                        height: 100px;
+                        width: auto;
+                    }
+                    .right {
+                        left: 260px;
+                    }
+                    .left {
+                        right: 260px;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 50%;
+        min-height: 700px;
+        padding: 50px 0;
+
+        .misure {
+            display: flex;
+            width: 300px;
+
+            .misure-title {
+                width: 40%;
+            }
+
+            .misure-list {
+                width: 60%;
+
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    li {
+                        margin: 2px 5px;
+                        cursor: pointer;
+                        border: 1px solid lightskyblue;
+                        padding: 2px;
+                        height: 25px;
+                        width: 25px;
+                        border-radius: 50%;
+                        text-align: center;
+                        
+                        &:hover {
+                            background-color: lightskyblue;
+                            color: #fff;
+                        }
+                    }
+
+                    .active {
+                        background-color: lightskyblue;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+
+        .adesivi {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            .adesivi-container {
+                display: flex;
+                align-items: center;
+                .adesivi-title {
+                    width: 40%;
+                }
+                .adesivi-list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 60%;
+
+                    .patch {
+                        cursor: pointer;
+                        border: 1px solid lightskyblue;
+                        margin: 2px;
+                        padding: 2px;
+
+                        &:hover {
+                            background-color: lightskyblue;
+                            color: #fff;
+                        }
+                    }
+
+                    .active {
+                        background-color: lightskyblue;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        #rim-adesivi {
+            border: 1px solid lightskyblue;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                color: lightskyblue;
+            }
+        }
+
+        .err-misura {
+            visibility: hidden;
+            color: red;
+        }
+
+        .btn-carrello {
+            background-color: lightskyblue;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #fff;
+
+            &:hover {
+                transform: scale(1.05);
+                transition: all .1s linear;
+                border: 1px solid lightskyblue;
+                background-color: #fff;
+                color: lightskyblue;
+            }
+        }
+
+    }
+    #modal {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        border-radius: 20px;
+        background-color: rgba(0, 0, 0, 0.2);
+
+        
+        #riepilogo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            width: 30%;
+            height: 40%;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.9);
+            position: relative;
+            span {
+                position: absolute;
+                font-size: 28px;
+                top: 10px;
+                right: 20px;
+                cursor: pointer;
+    
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    height: 200px;
+    ul {
+        h2 {
+            margin-bottom: 20px;
+        }
+        li {
+            margin: 5px 0;
+        }
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    main {
+        .media {
+            .gallery {
+                margin: auto;
+                .shoe-card {
+                    position: relative;
+                    img {
+                        width: 400px;
+                        height: auto;
+                        margin: 30px 0;
+                    }
+                    .overlay-patch {
+                        img {
+                            position: absolute;
+                            top: 60px;
+                            height: 50px;
+                            width: auto;
+                        }
+                        .right {
+                            left: 155px;
+                        }
+                        .left {
+                            right: 155px;
+                        }
+                    }
+    
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+        height: 100%;
+        .media {
+            overflow-y: visible;
+            width: 100%;
+            .gallery {
+                margin: auto;
+                .shoe-card {
+                    position: relative;
+                    img {
+                        width: 375;
+                        height: auto;
+                        margin: 30px 0;
+                    }
+                    .overlay-patch {
+                        img {
+                            position: absolute;
+                            top: 60px;
+                            height: 50px;
+                            width: auto;
+                        }
+                        .right {
+                            left: 155px;
+                        }
+                        .left {
+                            right: 155px;
+                        }
+                    }
+    
+                }
+            }
+        }
+
+        .details {
+            height: 500px;
+
+            .btn-carrello {
+                padding: 10px;
+            }
+        }
+    }
+
+    footer {
+        flex-wrap: wrap;
+
+        ul {
+            width: 50%;
+        }
+    }
+}

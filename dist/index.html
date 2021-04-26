@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./app.js" defer></script>
+    <link rel="stylesheet" href="./app.css">
+    <title>Skylabs Store</title>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="logo">
+                <img src="./img/logo.jpg" alt="">
+                <h1>Skylabs Store</h1>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li>
+                        <a href="#">DONNA</a>
+                    </li>
+                    <li>
+                        <a href="#">UOMO</a>
+                    </li>
+                    <li>
+                        <a href="#">BAMBINO</a>
+                    </li>
+                    <li>
+                        <a href="#">CASA</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        
+        <main>
+            <div class="media">
+                <div class="gallery">
+                    <div class="shoe-card">
+                        <div class="overlay-patch" data-side="left">
+                            <!-- adesivo -->
+                        </div>
+                        <img src="./img/scarpa-destra/right_inner_8051124195013_1.png" alt="left">
+                    </div>
+                    <div class="shoe-card">
+                        <div class="overlay-patch" data-side="right">
+                            <!-- adesivo -->
+                        </div>
+                        <img src="./img/scarpa-destra/right_outer_8051124195013_2.png" alt="right">
+                    </div>
+                    <div class="shoe-card">
+                        <img src="./img/scarpa-destra/right_back_8051124195013_3.png" alt="back">
+                    </div>
+                    <div class="shoe-card">
+                        <img src="./img/scarpa-destra/Sneakers_right_shoe_front.png" alt="top">
+                    </div>
+                </div>
+            </div>
+            <div class="details">
+                <h2 id="name">NOME SCARPA</h2>
+                <h3 id="price">149.99 €</h3>
+                <p>Descrizione della scarpa</p>
+                <div class="misure">
+                    <div class="misure-title">
+                        <h5>MISURE</h5>
+                    </div>
+                    <div class="misure-list">
+                        <ul>
+                            <li class="misure-item">39</li>
+                            <li class="misure-item">40</li>
+                            <li class="misure-item">41</li>
+                            <li class="misure-item">42</li>
+                            <li class="misure-item">43</li>
+                            <li class="misure-item">44</li>
+                            <li class="misure-item">45</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="adesivi">
+                    <div class="adesivi-container left">
+                        <div class="adesivi-title">
+                            <h5>ADESIVI SX</h5>
+                        </div>
+                        <div class="adesivi-list left">
+
+                        </div>
+                    </div>
+                    <div class="adesivi-container right">
+                        <div class="adesivi-title">
+                            <h5>ADESIVI DX</h5>
+                        </div>
+                        <div class="adesivi-list right">
+
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button id="rim-adesivi">RIMUOVI ADESIVI</button>
+                </div>
+                <h4 class="err-misura hide">SELEZIONA UNA MISURA</h4>
+                <button class="btn-carrello">AGGIUNGI AL CARRELLO</button>
+            </div>
+    
+            <div id="modal">
+                    <!-- info scarpa selezionata -->
+                    <div id="riepilogo">
+                        <span id="close-modal">x</span>
+                        <div id="info"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    
+        <footer>
+            <ul>
+                <h3>NEGOZI</h3>
+                <li>
+                    <a href="#">Trova un negozio</a>
+                </li>
+                <li>
+                    <a href="#">Prenota appuntamento</a>
+                </li>
+            </ul>
+            <ul>
+                <h3>SERVIZIO CLIENTI</h3>
+                <li>
+                    <a href="#">Servizi esclusivi</a>
+                </li>
+                <li>
+                    <a href="#">Contattaci</a>
+                </li>
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+                <li>
+                    <a href="#">Ordini e spedizioni</a>
+                </li>
+                <li>
+                    <a href="#">Resi e rimborsi</a>
+                </li>
+            </ul>
+            <ul>
+                <h3>SU DI NOI</h3>
+                <li>
+                    <a href="#">Il nostro gruppo</a>
+                </li>
+                <li>
+                    <a href="#">Dati societari</a>
+                </li>
+                <li>
+                    <a href="#">Lavora con noi</a>
+                </li>
+            </ul>
+            <ul>
+                <h3>AREA LEGALE</h3>
+                <li>
+                    <a href="#">Note legali</a>
+                </li>
+                <li>
+                    <a href="#">Termini e condizioni</a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>
